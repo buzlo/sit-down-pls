@@ -1,0 +1,129 @@
+@import 'colors', 'variables';
+
+.link {
+  position: relative;
+  z-index: 1;
+  outline: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: color .3s ease-in-out, border-color .3s ease-in-out;
+
+  &:focus {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -10px;
+    left: -10px;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  svg {
+    fill: currentColor;
+    transition: fill .3s ease-in-out;
+  }
+
+  &_grey {
+
+    &::before {
+      background-color: $color-primary_lighter;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:focus {
+      color: $color-primary_dark;
+    }
+
+    &:active {
+      color: $color-primary_dark;
+    }
+  }
+
+  &_primary {
+    color: $color-primary;
+
+    &::before {
+      background-color: $color-primary_lighter;
+    }
+
+    &:hover {
+      color: $color-primary_light;
+    }
+
+    &:focus {
+      color: $white;
+    }
+
+    &:active {
+      color: $color-primary_dark;
+    }
+
+  }
+
+  &_secondary {
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: $color-secondary;
+
+    &::before {
+      left: -2px;
+      right: 0;
+      background-color: $color-secondary_lighter;
+    }
+
+    &:hover {
+      color: $color-secondary_light;
+    }
+
+    &:focus {
+      color: $color-secondary;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      color: $color-secondary_dark;
+
+      &::before {
+        opacity: 0;
+      }
+
+      svg {
+        fill: $color-secondary_dark;
+      }
+    }
+  }
+
+  &_underline {
+    text-decoration: underline;
+
+    &::before {
+      right: -2px;
+      left: -2px;
+    }
+  }
+}

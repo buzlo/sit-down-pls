@@ -1,0 +1,42 @@
+@import 'mixins';
+
+.details-descr {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include max-width(320px) {
+        margin-bottom: 6px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__schemes-list {
+    display: flex;
+    gap: 28px;
+    margin-top: auto;
+
+    @include max-width(320px) {
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+  }
+}

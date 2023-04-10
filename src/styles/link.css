@@ -1,0 +1,95 @@
+.link {
+  position: relative;
+  z-index: 1;
+  outline: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.link:focus::before {
+  opacity: 1;
+}
+.link:active::before {
+  opacity: 0;
+}
+.link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -10px;
+  left: -10px;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.link svg {
+  fill: currentColor;
+  transition: fill 0.3s ease-in-out;
+}
+.link_grey::before {
+  background-color: #ebd1ff;
+}
+.link_grey:hover {
+  color: #a65cf0;
+}
+.link_grey:focus {
+  color: #7033ac;
+}
+.link_grey:active {
+  color: #7033ac;
+}
+.link_primary {
+  color: #a65cf0;
+}
+.link_primary::before {
+  background-color: #ebd1ff;
+}
+.link_primary:hover {
+  color: #c998fb;
+}
+.link_primary:focus {
+  color: #fff;
+}
+.link_primary:active {
+  color: #7033ac;
+}
+.link_secondary {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #ff862f;
+}
+.link_secondary::before {
+  left: -2px;
+  right: 0;
+  background-color: #fff5d1;
+}
+.link_secondary:hover {
+  color: #ffbd59;
+}
+.link_secondary:focus {
+  color: #ff862f;
+}
+.link_secondary:focus::before {
+  opacity: 1;
+}
+.link_secondary:active {
+  color: #bb370e;
+}
+.link_secondary:active::before {
+  opacity: 0;
+}
+.link_secondary:active svg {
+  fill: #bb370e;
+}
+.link_underline {
+  text-decoration: underline;
+}
+.link_underline::before {
+  right: -2px;
+  left: -2px;
+}

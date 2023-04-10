@@ -1,0 +1,27 @@
+footer.footer
+  .footer__container.container
+    a.footer__logo.logo(href="#")
+      img(src="img/svg/sprite.svg#sit-down-pls-logo" alt="Логотип SitDownPls")
+    ul.footer__social.social
+      li.social__item
+        a.social__link.svg-wrapper(href="#")
+          svg.social__svg(width="30" height="30")
+            use(xlink:href="img/svg/sprite.svg#fb")
+      li.social__item
+        a.social__link.svg-wrapper(href="#")
+          svg.social__svg(width="30" height="30")
+            use(xlink:href="img/svg/sprite.svg#vk")
+      li.social__item
+        a.social__link.svg-wrapper(href="#")
+          svg.social__svg(width="30" height="30")
+            use(xlink:href="img/svg/sprite.svg#ig")
+    nav.footer__nav.nav.nav_footer
+      ul.nav__list
+        - var footerNavItems = [{ title: "О нас", subitems: [{ subtitle: "О компании", href: "#about" }, { subtitle: "Блог", href: "#" }] }, { title: "Услуги", subitems: [{ subtitle: "Доставка", href: "#" }, { subtitle: "Рассрочка и кредит", href: "#" }, { subtitle: "Сборка и установка", href: "#" }] }, { title: "Связь с нами", subitems: [{ subtitle: "Обратная связь", href: "#" }, { subtitle: "Контакты", href: "#" }] }, { title: "Сотрудничество", subitems: [{ subtitle: "Поставщикам", href: "#" }, { subtitle: "Оптовикам", href: "#" }, { subtitle: "Карьера", href: "#" }] }]
+        each navItem in footerNavItems
+          li.nav__item
+            h3.nav__title= navItem.title
+            ul.nav__subnav.subnav.subnav_footer
+              each subNavItem in navItem.subitems
+                li.subnav__item
+                  a(href=`${subNavItem.href}`).subnav__link.link.link_grey= subNavItem.subtitle

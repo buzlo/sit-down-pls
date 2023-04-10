@@ -1,0 +1,89 @@
+doctype
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title SitDownPls
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@900&display=swap")
+    link(rel="stylesheet" href="styles/main.css")
+    link(rel="shortcut icon" href="img/favicon.png" type="image/x-icon")
+    script(src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js")
+    script(defer src="js/main.js")
+    script.
+      document.addEventListener('DOMContentLoaded', () => {
+        initMainPage();
+      })
+  body
+    include includes/header
+
+    main.main
+      section.hero
+        .hero__swiper.swiper
+          .swiper-wrapper
+            - var swiperSlides = [{title: "Скидка 15% на\xA0первую покупку", buttonText: "Получить!"}, {title: "1000+ аксессуаров для\xA0дома", buttonText: "Подробнее"}, {title: "Коллекция стильного и\xA0яркого текстиля", buttonText: "Подробнее"}]
+            each item in swiperSlides
+              .hero__slide.swiper-slide
+                .hero__slide-container.container
+                  h2.hero__slide-title= item.title
+                  button.hero__slide-btn.btn.btn_primary= item.buttonText
+          .hero__pagination.swiper-pagination
+      section.specials.container
+        .specials__swiper.swiper
+          h2.specials__title.section-title Специальные предложения
+          nav.specials__nav.arrow-nav
+            button.specials__prev.btn.btn_arrow
+              svg.specials__svg(width="32" height="32")
+                use(xlink:href="img/svg/sprite.svg#arrow-left")
+            button.specials__next.btn.btn_arrow
+              svg.specials__svg(width="32" height="32")
+                use(xlink:href="img/svg/sprite.svg#arrow-right")
+      section.top-products.container
+        h2.top-products__title.section-title Высокий рейтинг
+      section.new-collection
+        picture.new-collection__picture
+          source(media="(max-width: 320px)", srcset=`img/new-collection-320.png`)
+          source(media="(max-width: 768px)", srcset=`img/new-collection-768.png`)
+          source(media="(max-width: 1024px)", srcset=`img/new-collection-1024.png`)
+          img.new-collection__img(loading="lazy" src=`img/new-collection.png` alt="Иллюстрация коллекции")
+        .new-collection__container.container
+          h2.new-collection__title Оксфорд 1950
+          p.new-collection__descr Новая коллекция изысканных кресел
+          button.new-collection__btn.btn.btn_primary Ознакомиться
+      section.categories.container
+        h2.categories__title.section-title Топ категории
+      section.articles.container
+        .articles__swiper.swiper
+          h2.articles__title.section-title Полезное
+          nav.articles__nav.arrow-nav
+            button.articles__prev.btn.btn_arrow
+              svg.articles__svg(width="32" height="32")
+                use(xlink:href="img/svg/sprite.svg#arrow-left")
+            button.articles__next.btn.btn_arrow
+              svg.articles__svg(width="32" height="32")
+                use(xlink:href="img/svg/sprite.svg#arrow-right")
+      section.application.container
+        form.application__form
+          h2.application__title.section-title Мы всегда вам рады!
+          p.application__descr Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
+            svg(width="14" height="14")
+              use(xlink:href="img/svg/sprite.svg#questionmark")
+          .application__input-wrapper.input-wrapper
+            input.application__input.form-input(type="text" name="name" placeholder="Как вас зовут?")
+          .application__input-wrapper.input-wrapper
+            input.application__input.form-input(type="text" name="tel" placeholder="Ваш телефон")
+          .application__input-wrapper.input-wrapper
+            input.application__input.form-input(type="text" name="email" placeholder="Ваш e-mail")
+          button.application__submit.btn.btn_primary(type="submit") Отправить
+          label.application__checkbox-label Принимаю #[a.link.link_primary.link_underline(href="#") пользовательское соглашение]
+            input.application__checkbox.visually-hidden(type="checkbox")
+            span.application__custom-checkbox.custom-checkbox
+
+    include includes/footer
+    p.copyright SDP®   2011-2021

@@ -1,0 +1,159 @@
+@import 'colors', 'variables';
+
+.btn {
+  display: block;
+  border: none;
+  padding: 0;
+  background: transparent;
+  outline: none;
+
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  border-radius: 10px;
+
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+  &_primary {
+    border: solid 2px $color-primary;
+    padding: 20px 30px;
+    color: $white;
+
+    background: $color-primary;
+    transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+    &:hover {
+      background-color: $color-primary_light;
+      border-color: $color-primary_light;
+    }
+
+    &:focus {
+      background-color: $color-primary_light;
+      border-color: $color-primary_dark;
+    }
+
+    &:active {
+      background-color: $color-primary_dark;
+      border-color: $color-primary_dark;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 296px;
+    }
+  }
+
+  &_secondary {
+    padding: 17px 33px;
+    color: $color-primary;
+    border: solid 2px $color-primary;
+    background: transparent;
+
+    &:hover {
+      color: $white;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &:focus {
+      color: $white;
+      background-color: $color-primary_light;
+      border-color: $color-primary;
+    }
+
+    &:active {
+      color: $white;
+      background-color: $color-primary_dark;
+      border-color: $color-primary_dark;
+    }
+  }
+
+  &_svg {
+    padding: 4px;
+    margin: -4px;
+    color: $color-primary;
+    border-radius: 0;
+
+    svg {
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: $color-primary_light;
+    }
+
+    &:focus {
+      color: $white;
+      background-color: $color-primary_light;
+    }
+
+    &:active {
+      color: $color-primary_dark;
+      background-color: transparent;
+    }
+  }
+
+  &_arrow {
+    display: flex;
+    align-items: center;
+
+    span {
+      align-self: flex-end;
+      margin-right: 5px;
+      color: $color-primary;
+      border-bottom: 2px solid transparent;
+      transition: color .3s ease-in-out, border-color .3s ease-in-out;
+    }
+
+    svg {
+      fill: transparent;
+      color: $color-primary;
+      stroke: transparent;
+      transition: fill .3s ease-in-out, color .3s ease-in-out, stroke .3s ease-in-out;
+    }
+
+    &:not(:disabled) {
+      &:hover {
+        span {
+          border-color: $color-primary;
+        }
+
+        svg {
+          color: $white;
+          fill: $color-primary;
+        }
+      }
+
+      &:focus {
+        svg {
+          color: $white;
+          fill: $color-primary_light;
+          stroke: $color-primary;
+        }
+      }
+
+      &:active {
+        span {
+          color: $color-primary_dark;
+          border-color: $color-primary_dark;
+        }
+
+        svg {
+          color: $white;
+          fill: $color-primary_dark;
+          stroke: $color-primary_dark;
+        }
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+
+      svg {
+        color: $grey_dark;
+        stroke: $grey_dark;
+      }
+    }
+  }
+}

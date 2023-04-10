@@ -1,0 +1,59 @@
+header.header
+  .header__subheader.subheader
+    .subheader__container.container
+      span.subheader__region.region
+        span.region__span Ваш регион:
+        select.region__select
+          option.region_option Москва
+          option.region_option Казань
+          option.region_option Уфа
+          option.region_option Пермь
+        a.region__tel.link.link_secondary(href="tel:+74958854547")
+          svg(width="18" height="18")
+            use(xlink:href="img/svg/sprite.svg#tel")
+          span.tel__span +7 (495) 885-45-47
+      nav.subheader__subnav.subnav
+        ul.subnav__list
+          - var navItems = [{title: "О компании", id: "about"}, {title: "Гарантия и возврат", id: "guarantee"}, {title: "Корпоративным клиентам", id: "corporate"}, {title: "Дизайн-решение", id: "design"}]
+          each item in navItems
+            li.subnav__item
+              a(href=`#${item.id}`).subnav__link.link.link_grey= item.title
+      span.subheader__personal.personal
+        a.personal__account.btn.btn_svg(href="#")
+          svg(width="26" height="28")
+            use(xlink:href="img/svg/sprite.svg#user")
+        a.personal__cart.btn.btn_svg(href="#")
+          svg(width="30" height="28")
+            use(xlink:href="img/svg/sprite.svg#cart")
+  .header__container.container
+    a.header__logo.logo(href="#")
+      img(src="img/svg/sprite.svg#sit-down-pls-logo" alt="Логотип SitDownPls")
+    nav.header__nav.nav.nav_header
+      button.header__burger.btn.burger
+        span.burger__line
+        span.burger__line
+        span.burger__line
+      ul.nav__list
+        - var navItems = [{title: "Каталог", id: "catalogue"}, {title: "Магазины", id: "stores"}, {title: "Шоу-рум", id: "show-room"}, {title: "Доставка и оплата", id: "delivery"}, {title: "Дисконт", id: "discount"}, {title: "Контакты", id: "contacts"}]
+        each item in navItems
+          li.nav__item
+            a(href=`#${item.id}`).nav__link.link.link_grey= item.title
+    form.header__search.search.input-group
+      span.search__input-block.input-block
+        span.search__svg-wrapper.svg-wrapper
+          svg.search__svg(width="16" height="16")
+            use(xlink:href="img/svg/sprite.svg#search")
+        input.search__input(type="text" placeholder="Я хочу купить...")
+        button(type="button").search__btn.btn.btn_arrow
+          svg(width="32" height="32")
+            use(xlink:href="img/svg/sprite.svg#arrow-right")
+      select.search__select
+        option.search__option(value='') Категория
+    span.header__personal.personal
+      a.personal__account.btn.btn_svg(href="#")
+        svg(width="26" height="28")
+          use(xlink:href="img/svg/sprite.svg#user")
+      a.personal__cart.btn.btn_svg(href="#")
+        svg(width="30" height="28")
+          use(xlink:href="img/svg/sprite.svg#cart")
+

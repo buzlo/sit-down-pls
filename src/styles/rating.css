@@ -1,0 +1,19 @@
+.rating {
+  padding-left: 23px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #ff862f;
+  background-image: url("../img/svg/sprite.svg#star");
+  background-repeat: no-repeat;
+  background-size: auto 15px;
+  background-position: left -36px center;
+}
+@media (max-width: 767px) {
+  .product-card .rating {
+    padding-left: 19px;
+    font-size: 12px;
+    background-size: auto 12px;
+    background-position: left -28px center;
+  }
+}

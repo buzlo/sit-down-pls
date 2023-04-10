@@ -1,0 +1,9 @@
+@mixin max-width($threshold) {
+  @media (max-width: $threshold) {
+    @content;
+  }
+}
+
+@mixin set-flex-basis ($qty, $gap, $span: 1) {
+  flex-basis: calc($span / $qty * (100% - ($qty - 1) * $gap) + $gap * ($span - 1));
+}

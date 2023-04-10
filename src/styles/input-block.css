@@ -1,0 +1,19 @@
+.input-block {
+  display: flex;
+  flex-grow: 1;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.input-block:hover {
+  background-color: #eaeaea;
+}
+.input-block:focus-within {
+  border-color: #a65cf0;
+}
+.input-block:active {
+  background-color: #fff;
+}
+.input-block * {
+  border: none;
+  outline: none;
+  background: transparent;
+}

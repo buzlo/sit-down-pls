@@ -1,0 +1,33 @@
+@import 'colors', 'mixins', 'variables';
+
+.breadcrumbs {
+  margin-top: -11px;
+  margin-bottom: 32px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  color: $grey_dark;
+
+  @include max-width (767px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    &:not(:last-child)::after {
+      margin: 0 4.5px;
+      content: "/";
+    }
+
+    &:last-child {
+      color: $color-primary_dark;
+    }
+  }
+}

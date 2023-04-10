@@ -1,0 +1,124 @@
+.btn {
+  display: block;
+  border: none;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  border-radius: 10px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.btn_primary {
+  border: solid 2px #a65cf0;
+  padding: 20px 30px;
+  color: #fff;
+  background: #a65cf0;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.btn_primary:hover {
+  background-color: #c998fb;
+  border-color: #c998fb;
+}
+.btn_primary:focus {
+  background-color: #c998fb;
+  border-color: #7033ac;
+}
+.btn_primary:active {
+  background-color: #7033ac;
+  border-color: #7033ac;
+}
+@media screen and (max-width: 767px) {
+  .btn_primary {
+    width: 296px;
+  }
+}
+.btn_secondary {
+  padding: 17px 33px;
+  color: #a65cf0;
+  border: solid 2px #a65cf0;
+  background: transparent;
+}
+.btn_secondary:hover {
+  color: #fff;
+  background-color: #a65cf0;
+  border-color: #a65cf0;
+}
+.btn_secondary:focus {
+  color: #fff;
+  background-color: #c998fb;
+  border-color: #a65cf0;
+}
+.btn_secondary:active {
+  color: #fff;
+  background-color: #7033ac;
+  border-color: #7033ac;
+}
+.btn_svg {
+  padding: 4px;
+  margin: -4px;
+  color: #a65cf0;
+  border-radius: 0;
+}
+.btn_svg svg {
+  fill: currentColor;
+}
+.btn_svg:hover {
+  color: #c998fb;
+}
+.btn_svg:focus {
+  color: #fff;
+  background-color: #c998fb;
+}
+.btn_svg:active {
+  color: #7033ac;
+  background-color: transparent;
+}
+.btn_arrow {
+  display: flex;
+  align-items: center;
+}
+.btn_arrow span {
+  align-self: flex-end;
+  margin-right: 5px;
+  color: #a65cf0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.btn_arrow svg {
+  fill: transparent;
+  color: #a65cf0;
+  stroke: transparent;
+  transition: fill 0.3s ease-in-out, color 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+.btn_arrow:not(:disabled):hover span {
+  border-color: #a65cf0;
+}
+.btn_arrow:not(:disabled):hover svg {
+  color: #fff;
+  fill: #a65cf0;
+}
+.btn_arrow:not(:disabled):focus svg {
+  color: #fff;
+  fill: #c998fb;
+  stroke: #a65cf0;
+}
+.btn_arrow:not(:disabled):active span {
+  color: #7033ac;
+  border-color: #7033ac;
+}
+.btn_arrow:not(:disabled):active svg {
+  color: #fff;
+  fill: #7033ac;
+  stroke: #7033ac;
+}
+.btn_arrow:disabled {
+  cursor: default;
+}
+.btn_arrow:disabled svg {
+  color: #999;
+  stroke: #999;
+}

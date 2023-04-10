@@ -1,0 +1,91 @@
+doctype
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title SitDownPls
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@900&display=swap")
+    link(rel="stylesheet" href="styles/main.css")
+    link(rel="shortcut icon" href="img/favicon.png" type="image/x-icon")
+    script(src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js")
+    script(defer src="js/main.js")
+    script.
+      document.addEventListener('DOMContentLoaded', () => {
+        initDetailsPage();
+      })
+  body
+    include includes/header
+    main.main
+      nav.breadcrumbs
+        .breadcrumbs__container.container
+          ul.breadcrumbs__list
+            li.breadcrumbs__item
+              a.breadcrumbs__link.link.link_grey(href="/index.html") Главная
+            li.breadcrumbs__item
+              a.breadcrumbs__link.link.link_grey(href="#") Каталог
+            li.breadcrumbs__item
+              a.breadcrumbs__link.link.link_grey(href="#") Диваны
+            li.breadcrumbs__item
+              a.breadcrumbs__link.link.link_grey(href="#") Прямые диваны
+            li.breadcrumbs__item D-31
+      article.details
+        .details__container.container
+          picture.details__front-pic
+            source(media="(max-width: 320px)", srcset=`img/product-9-front-320.png`)
+            source(media="(max-width: 768px)", srcset=`img/product-9-front-768.png`)
+            source(media="(max-width: 1024px)", srcset=`img/product-9-front-1024.png`)
+            img(loading="lazy" src=`img/product-9-front.png` alt="Изображение продукта")
+          section.details__summary.summary
+            p.summary__rating.rating 4,8
+            h2.summary__title Диван тканевый прямой "D-31"
+            h3.summary__subtitle Мини 120 см без ящика Stark синий (Рогожка)
+            p.summary__price 28 490 руб
+            a.summary__buy.btn.btn_primary(href="#") Купить в один клик
+            button.summary__add-to-cart.link.link_primary + Добавить в корзину
+          ul.details__miniatures-list
+            li.details__miniatures-item
+              img.details__miniatures-img(loading="lazy" src=`img/product-9-mini-1.png` alt="Изображение продукта")
+            li.details__miniatures-item
+              img.details__miniatures-img(loading="lazy" src=`img/product-9-mini-2.png` alt="Изображение продукта")
+            li.details__miniatures-item
+              img.details__miniatures-img(loading="lazy" src=`img/product-9-mini-3.png` alt="Изображение продукта")
+            li.details__miniatures-item
+              img.details__miniatures-img(loading="lazy" src=`img/product-9-mini-4.png` alt="Изображение продукта")
+          section.details__descr.details-descr
+            h3.details-descr__title Опорный механизм
+            .details-descr__text
+              p.details-descr__paragraph Опорный механизм напоминает пантограф, к&nbsp;которому добавили дополнительную секцию. У&nbsp;опорного дивана сиденье &laquo;выпрыгивает&raquo; вперёд и&nbsp;вытаскивает вторую часть спального места. Заключительный штрих&nbsp;&mdash; опустить&nbsp;спинку.
+              p.details-descr__paragraph Этот механизм не&nbsp;портит пол и&nbsp;не&nbsp;боится ковров. Требуется чуть больше силы, чтобы разложить диван, но&nbsp;подросток справится.
+            ul.details-descr__schemes-list
+              li.details__schemes-item
+                img.details__schemes-img(loading="lazy" src=`img/product-9-scheme.png` alt="Изображение продукта")
+              li.details__schemes-item
+                img.details__schemes-img(loading="lazy" src=`img/product-9-scheme-2.png` alt="Изображение продукта")
+          section.details__specs
+            - var specsItems = [{name: "Гарантия", value: "18 месяцев"}, {name: "Артикул", value: "AAA41269004"}, {name: "Длина", value: "163 см"}, {name: "Высота", value: "90 см"}, {name: "Глубина", value: "108 см"}, {name: "Спальное место", value: "200 см х 125 см"}, {name: "Высота посадки", value: "45 см"}, {name: "Механизм", value: "Опорный"}, {name: "Тип обивки", value: "Рогожка"}, {name: "Цвет", value: "Синий"}, {name: "Наполнитель", value: "Независимый пружинный блок"}, {name: "Материал каркаса", value: "Металл. рама с дерев. латами"}, {name: "Количество мест", value: "Двухместные"}, {name: "Категория", value: "Прямые тканевые диваны"}, {name: "Возврат", value: "Условия"}]
+            ul.details__specs-list
+              each specsItem in specsItems
+                li.details__specs-item
+                  .details__specs-aligner
+                    h4.details__specs-name= specsItem.name
+                    span.details__specs-filler
+                  span.details__specs-value= specsItem.value
+      section.similar-products.container
+        .similar-products__swiper.swiper
+          h3.similar-products__title Похожие товары
+          nav.similar-products__nav.arrow-nav
+            button.similar-products__prev.btn.btn_arrow
+              svg.similar-products__svg(width="32" height="32")
+                use(xlink:href="img/svg/sprite.svg#arrow-left")
+            button.similar-products__next.btn.btn_arrow
+              svg.similar-products__svg(width="32" height="32")
+                use(xlink:href="img/svg/sprite.svg#arrow-right")
+  include includes/footer
+  p.copyright SDP®   2011-2021

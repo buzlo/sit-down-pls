@@ -1,0 +1,26 @@
+.breadcrumbs {
+  margin-top: -11px;
+  margin-bottom: 32px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  color: #999;
+}
+@media (max-width: 767px) {
+  .breadcrumbs {
+    display: none;
+  }
+}
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs__item:not(:last-child)::after {
+  margin: 0 4.5px;
+  content: "/";
+}
+.breadcrumbs__item:last-child {
+  color: #7033ac;
+}

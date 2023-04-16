@@ -67,7 +67,7 @@ function createProductsList(products, blockName, isSwiper) {
       $productsItem.classList.add('swiper-slide', 'product-card_swiper');
     }
 
-    $btn.href = '/details.html';
+    $btn.href = './details.html';
     $btn.classList.add('product-card__btn', 'btn', 'btn_secondary');
     $btn.textContent = 'Купить';
     $productsItem.append($btn);

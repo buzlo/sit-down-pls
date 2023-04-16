@@ -1,5 +1,5 @@
 const choicesIconParams = {
-  svgUrl: '../img/svg/sprite.svg#arrow-down',
+  svgUrl: './img/svg/sprite.svg#arrow-down',
   svgWidth: '11',
   svgHeight: '11',
 };
